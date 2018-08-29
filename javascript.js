@@ -44,6 +44,8 @@ var config = {
     console.log(childSnapshot.val().pay);
     console.log(childSnapshot.val().startDate);
     console.log(childSnapshot.val().joinDate);
+    console.log(childSnapshot.val().joinDate);
+
     
     // full list of items to the well
     $("#full-member-list").append("<div class='well'><span class='member-name'> " + childSnapshot.val().name +
@@ -58,8 +60,13 @@ var config = {
       
   dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
     // Change the HTML to reflect
-    $("#name-display").text(snapshot.val().name);
-    $("#role-display").text(snapshot.val().role);
-    $("#pay-display").text(snapshot.val().pay);
-    $("#startDate-display").text(snapshot.val().startDate);
+    $("#name-tb").text(snapshot.val().name);
+    $("#role-tb").text(snapshot.val().role);
+    $("#date-tb").text(snapshot.val().pay);
+    $("#months-tb").text(snapshot.val().startDate);
+    $("#rate-tb").text(snapshot.val().joinDate);
+    $("#total-tb").text(snapshot.val().startDate);
+
+
+
   });  
